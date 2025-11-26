@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background: url('https://images.unsplash.com/photo-1622722791985-e22778e7fefa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') bottom no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    font-size: 4rem;
+    font-family: 'Manrope', Arial, sans-serif;
+}
+
+.news {
+    background-color: #fff;
+    padding: 5px 0 0;
+}
+
+article {
+    width: 768px;
+    margin: 0 auto;
+    padding: 6px 15px;
+    border-bottom: 1px solid black;
+}
+
+article a {
+    color: rgb(34, 28, 28);
+    text-decoration: none;
+}
+
+article a:hover {
+    color: #0085a1;
+}
+
+article h2 {
+    font-family: 'Manrope', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+.article-meta {
+    color: rgb(137, 137, 137);
+    margin-bottom: 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+}
+
+article img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+p {
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Окрашивает каждую вторую (четную) новость */
+article:nth-child(even){
+    background: #f0f0f0;
+}
+
+/* Для первой новости верхний отсуп больше */
+article:first-child {
+    padding: 32px 15px 6px;
+}
+
+/* Для последней новости удалил бардюр и прибавил расстояние */
+article:last-child {
+    padding: 6px 15px 32px;
+    border: none;
+}
+
+/* Оказывается без этого надпись улетает наверх страницы, но не понял почему */
+h2 {
+    position: relative;
+}
+
+/* Добавил надпись в конце элемента h2 в первых двух новостях */
+article:nth-child(1) h2::after,
+article:nth-child(2) h2::after {
+    content: 'NEW';
+    background: red;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 2px;
+    position: absolute;
+    top: -2px;
+    right: 0px;
+}
+
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+footer .links {
+    margin-bottom: 50px;
+}
+
+footer .links > a {
+    color: #818181;
+    padding: 0 25px;
+    font-size: 14px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.copyright {
+    color: #797979;
+    font-size: small;
+    font-family: 'Manrope', Arial, sans-serif;
+}
